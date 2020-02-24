@@ -1,0 +1,30 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/preset-typescript",
+    "next/babel",
+    "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", {
+      "decoratorsBeforeExport": true
+    }],
+    ["import", {
+      "libraryName": "antd",
+      "style": true
+    }],
+    ["import", {
+      "libraryName": "ant-design-pro",
+      "libraryDirectory": "lib",
+      "style": true,
+      "camel2DashComponentName": false
+    }, "antd-prod"],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    ["module-resolver", {
+      "alias": {
+        "@client": "./src/client"
+      }
+    }]
+  ]
+}
